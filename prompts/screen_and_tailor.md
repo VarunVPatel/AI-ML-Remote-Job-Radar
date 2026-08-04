@@ -73,6 +73,12 @@ Cap at `max_resumes_per_run`, highest scores first. For each, write
    content must fit one page.
 5. Lead each bullet with a strong verb. Keep quantification from the original.
 6. Do not use em dashes or the word "spearheaded".
+7. The `summary` is the highest-risk field because it is free text. It must be
+   assembled only from claims present in `summary_seeds` and the selected
+   bullets. Do not add scope words that upgrade the underlying fact —
+   "production", "at scale", "optimized", "led", "architected" — unless that
+   exact word is already in the source. Never invent interest, motivation, or
+   enthusiasm the candidate has not stated.
 
 After writing each file, set `"tailored": true` for that id in `screened.json`.
 
