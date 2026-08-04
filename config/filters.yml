@@ -20,7 +20,19 @@ title_keywords:
   - prompt engineer
   - ai researcher
   - perception engineer
+  # early-career surface area
+  - associate machine learning
+  - associate data scientist
+  - junior machine learning
+  - ml engineer i
+  - ai engineer i
+  - new grad
+  - graduate engineer
+  - early career
 
+# Blocks BOTH directions: too junior and too senior. You are ~2 months into
+# your first post-MS role, so Senior/Staff postings burn tokens and score ~40.
+# Remove 'senior' and 'lead' in roughly a year.
 title_blocklist:
   - intern
   - internship
@@ -28,13 +40,17 @@ title_blocklist:
   - vp
   - vice president
   - head of
-  - principal          # remove this line if you want staff+ roles
+  - principal
+  - staff
+  - senior
+  - sr
+  - lead
   - manager
   - recruiter
   - sales
   - marketing
 
-# ---- Remote detection ----
+# ---- Remote detection (matched against LOCATION field only) ----
 remote_markers:
   - remote
   - anywhere
@@ -51,8 +67,6 @@ onsite_markers:
   - in office
 
 # ---- Geography hard-reject (regex, matched against location string) ----
-# Only kills the blatantly ineligible. Anything ambiguous survives to the
-# LLM screen, which reads the fine print about work authorization.
 geo_hard_reject:
   - "us only"
   - "u\\.s\\. only"
@@ -72,7 +86,6 @@ geo_hard_reject:
 us_state_pattern: "[,\\-]\\s*(al|ak|az|ar|ca|co|ct|de|fl|ga|hi|id|il|in|ia|ks|ky|la|me|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|oh|ok|or|pa|ri|sc|sd|tn|tx|ut|vt|va|wa|wv|wi|wy|dc)\\b"
 
 # A named region in the LOCATION field scopes the role to that region.
-# "Remote - United States" is not a job you can take from Bengaluru.
 restricted_regions:
   - united states
   - usa
@@ -112,13 +125,16 @@ ok_regions:
 
 # ---- Your situation (fed to the LLM screen) ----
 candidate_context:
-  based_in: "Bengaluru, India (IST, UTC+5:30)"
+  based_in: "Vadodara, India (IST, UTC+5:30)"
   work_authorization: "Authorized to work in India. No US/EU/UK work visa."
+  experience_level: "Early career. MS in Artificial Intelligence completed 2026,
+                     currently ~2 months into first full-time AI/ML role. Score
+                     against entry-level and mid-level expectations, not senior."
   open_to: "Fully remote roles hiring from India, or global/worldwide roles.
             Contractor / EOR arrangements are fine."
   timezone_tolerance: "Can overlap up to ~4-5 hours with US Eastern or full overlap with EMEA."
 
 # ---- Thresholds ----
-match_threshold: 65      # tailor a resume for anything at or above this
-max_jobs_per_run: 30     # hard cap on jobs sent to the LLM stage per day
-max_resumes_per_run: 12  # hard cap on tailored resumes per day
+match_threshold: 55      # lowered from 65 while the bullet bank is still thin
+max_jobs_per_run: 30
+max_resumes_per_run: 12
