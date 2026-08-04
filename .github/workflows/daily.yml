@@ -1,0 +1,93 @@
+name: Daily AI/ML job radar
+
+on:
+  schedule:
+    # 01:10 UTC = 06:40 IST. GitHub's scheduler drifts 5-20 min under load,
+    # so this is set early to land near 07:00 IST rather than after it.
+    - cron: "10 1 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Skip email and skip state commit"
+        type: boolean
+        default: false
+
+concurrency:
+  group: job-radar
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          npm install -g @anthropic-ai/claude-code
+
+      - name: Fetch and filter postings
+        run: python src/pipeline.py
+
+      - name: Screen and tailor
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          COUNT=$(python -c "import json;print(len(json.load(open('work/new_jobs.json'))))")
+          echo "jobs=$COUNT" >> "$GITHUB_ENV"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "[]" > work/screened.json
+            echo "No new jobs; skipping LLM stage."
+            exit 0
+          fi
+          mkdir -p work/tailored
+          claude -p "$(cat prompts/screen_and_tailor.md)" \
+            --allowedTools "Read,Write,Edit,Glob,Grep" \
+            --max-turns 120 \
+            --output-format text
+
+      - name: Render digest and resumes
+        run: python src/render.py
+
+      - name: Send email
+        if: ${{ inputs.dry_run != true }}
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python src/notify.py
+
+      - name: Upload run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-${{ github.run_number }}
+          path: |
+            out/
+            work/screened.json
+          retention-days: 14
+
+      - name: Commit seen state
+        if: ${{ success() && inputs.dry_run != true }}
+        run: |
+          python src/commit_state.py
+          git config user.name  "job-radar[bot]"
+          git config user.email "job-radar@users.noreply.github.com"
+          git add state/seen.json
+          git diff --staged --quiet || git commit -m "state: ${{ env.jobs }} jobs seen [skip ci]"
+          git push

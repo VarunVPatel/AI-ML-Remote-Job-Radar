@@ -1,0 +1,45 @@
+ats:
+  greenhouse:
+  - anthropic
+  - databricks
+  - scaleai
+  - discord
+  - stripe
+  - robinhood
+  - affirm
+  - dropbox
+  - cloudflare
+  - gitlab
+  - twilio
+  - instacart
+  - lyft
+  - pinterest
+  - reddit
+  - samsara
+  - vercel
+  - airtable
+  - asana
+  - mongodb
+  - elastic
+  - datadog
+  - clickhouse
+  ashby:
+  - openai
+  - linear
+  - ramp
+  - replit
+  - modal
+  - baseten
+  - fireworksai
+  - harvey
+  - sierra
+  - elevenlabs
+  - cursor
+  - notion
+  - posthog
+  - supabase
+boards:
+- remotive
+- remoteok
+- arbeitnow
+- himalayas

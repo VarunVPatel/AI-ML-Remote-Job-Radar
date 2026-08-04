@@ -1,0 +1,124 @@
+# ---- Role matching (applied to job TITLE only, cheap pre-filter) ----
+title_keywords:
+  - machine learning
+  - ml engineer
+  - mlops
+  - ai engineer
+  - applied scientist
+  - research engineer
+  - research scientist
+  - deep learning
+  - nlp
+  - llm
+  - genai
+  - generative ai
+  - computer vision
+  - data scientist
+  - ai/ml
+  - ml infrastructure
+  - ml platform
+  - prompt engineer
+  - ai researcher
+  - perception engineer
+
+title_blocklist:
+  - intern
+  - internship
+  - director
+  - vp
+  - vice president
+  - head of
+  - principal          # remove this line if you want staff+ roles
+  - manager
+  - recruiter
+  - sales
+  - marketing
+
+# ---- Remote detection ----
+remote_markers:
+  - remote
+  - anywhere
+  - worldwide
+  - work from home
+  - wfh
+  - global
+
+onsite_markers:
+  - hybrid
+  - on-site
+  - onsite
+  - in-office
+  - in office
+
+# ---- Geography hard-reject (regex, matched against location string) ----
+# Only kills the blatantly ineligible. Anything ambiguous survives to the
+# LLM screen, which reads the fine print about work authorization.
+geo_hard_reject:
+  - "us only"
+  - "u\\.s\\. only"
+  - "usa only"
+  - "united states only"
+  - "us-based only"
+  - "must reside in the (us|united states)"
+  - "canada only"
+  - "uk only"
+  - "eu only"
+  - "emea only"
+  - "latam only"
+  - "brazil only"
+  - "australia only"
+
+# US state abbreviations, e.g. "Remote - CA". Matched as ", XX" or " - XX".
+us_state_pattern: "[,\\-]\\s*(al|ak|az|ar|ca|co|ct|de|fl|ga|hi|id|il|in|ia|ks|ky|la|me|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|oh|ok|or|pa|ri|sc|sd|tn|tx|ut|vt|va|wa|wv|wi|wy|dc)\\b"
+
+# A named region in the LOCATION field scopes the role to that region.
+# "Remote - United States" is not a job you can take from Bengaluru.
+restricted_regions:
+  - united states
+  - usa
+  - u\.s\.
+  - us
+  - americas
+  - canada
+  - united kingdom
+  - uk
+  - ireland
+  - emea
+  - europe
+  - european union
+  - eu
+  - germany
+  - france
+  - poland
+  - portugal
+  - spain
+  - netherlands
+  - israel
+  - australia
+  - new zealand
+  - japan
+  - brazil
+  - latam
+  - mexico
+
+# ...unless one of these also appears, which reopens it.
+ok_regions:
+  - india
+  - worldwide
+  - anywhere
+  - global
+  - apac
+  - asia pacific
+
+# ---- Your situation (fed to the LLM screen) ----
+candidate_context:
+  based_in: "Bengaluru, India (IST, UTC+5:30)"
+  work_authorization: "Authorized to work in India. No US/EU/UK work visa."
+  open_to: "Fully remote roles hiring from India, or global/worldwide roles.
+            Contractor / EOR arrangements are fine."
+  timezone_tolerance: "Can overlap up to ~4-5 hours with US Eastern or full overlap with EMEA."
+
+# ---- Thresholds ----
+match_threshold: 65      # tailor a resume for anything at or above this
+max_jobs_per_run: 30     # hard cap on jobs sent to the LLM stage per day
+max_resumes_per_run: 12  # hard cap on tailored resumes per day

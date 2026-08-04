@@ -1,0 +1,77 @@
+# YOUR BULLET BANK. Fill this in once, properly — the quality of every tailored
+# resume is capped by the quality of what's here.
+#
+# Rules that make this work:
+#  - Write MORE bullets than fit on one page (aim 25-40). The tailoring step
+#    SELECTS from these; it is forbidden from inventing new ones.
+#  - Every bullet must be TRUE and, where possible, quantified.
+#  - Tag generously. Tags are how relevant bullets get surfaced per JD.
+
+basics:
+  name: Varun Patel
+  title: Machine Learning Engineer          # adjust to how you want to be read
+  email: you@example.com
+  phone: "+91 ..."
+  location: Bengaluru, India
+  linkedin: linkedin.com/in/...
+  github: github.com/...
+  website: ""
+
+summary_seeds:
+  # 2-3 raw factual sentences. The tailoring step reweights these per JD;
+  # it may not add claims that aren't here.
+  - "Software engineer with N years building and shipping ML-backed systems in production."
+  - "Experience across the full lifecycle: data pipelines, model training, evaluation, deployment, monitoring."
+  - "Comfortable working async across time zones in distributed teams."
+
+experience:
+  - company: Ascendion
+    role: "<your title>"
+    location: Bengaluru, India (Remote)
+    start: "YYYY-MM"
+    end: present
+    bullets:
+      - text: "Built <X> that <did Y>, reducing <metric> by <N>%."
+        tags: [python, backend, llm]
+      - text: "Designed and deployed <pipeline> processing <N> records/day using <stack>."
+        tags: [data-engineering, pipelines, aws]
+      - text: "Integrated Claude via AWS Bedrock into <workflow>, cutting <task> time from <A> to <B>."
+        tags: [llm, aws, bedrock, genai, integration]
+      - text: "<Add 6-10 more. Be specific. Numbers beat adjectives.>"
+        tags: []
+
+  - company: "<previous employer>"
+    role: "<title>"
+    location: ""
+    start: "YYYY-MM"
+    end: "YYYY-MM"
+    bullets:
+      - text: ""
+        tags: []
+
+projects:
+  - name: "<project name>"
+    link: ""
+    bullets:
+      - text: "Built <thing> using <stack>; <outcome or scale>."
+        tags: [pytorch, nlp]
+
+education:
+  - institution: "<college>"
+    credential: "<degree>"
+    year: "YYYY"
+    note: ""
+
+skills:
+  languages: [Python, SQL, JavaScript]
+  ml: [PyTorch, scikit-learn, Hugging Face Transformers, LangChain]
+  mlops: [Docker, MLflow, Airflow, CI/CD]
+  cloud: [AWS, S3, Lambda, Bedrock, SageMaker]
+  data: [Pandas, Spark, PostgreSQL]
+
+# Things you will NOT claim, even if a JD asks for them. Guards against the
+# model stretching. Add anything you've only lightly touched.
+never_claim:
+  - Kubernetes administration
+  - CUDA kernel development
+  - Formal research publications
