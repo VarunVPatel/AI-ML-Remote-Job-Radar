@@ -1,43 +1,109 @@
 ats:
-  greenhouse:
-  - anthropic
-  - databricks
-  - scaleai
-  - discord
-  - stripe
-  - robinhood
-  - affirm
-  - dropbox
-  - cloudflare
-  - gitlab
-  - twilio
-  - instacart
-  - lyft
-  - pinterest
-  - reddit
-  - samsara
-  - vercel
-  - airtable
-  - asana
-  - mongodb
-  - elastic
-  - datadog
-  - clickhouse
   ashby:
-  - openai
-  - linear
-  - ramp
-  - replit
-  - modal
+  - abridge
+  - airbyte
+  - ambiencehealthcare
+  - andela
+  - anyscale
+  - astronomer
+  - atlan
   - baseten
+  - buffer
+  - cerebras
+  - character
+  - cohere
+  - confluent
+  - cursor
+  - deepgram
+  - drata
+  - elevenlabs
   - fireworksai
   - harvey
-  - sierra
-  - elevenlabs
-  - cursor
+  - langchain
+  - linear
+  - llamaindex
+  - modal
+  - navi
   - notion
+  - openai
+  - oyster
+  - peec
+  - perplexity
+  - pinecone
   - posthog
+  - prefect
+  - railway
+  - ramp
+  - regard
+  - render
+  - replit
+  - runway
+  - sarvam
+  - secureframe
+  - sierra
   - supabase
+  - synthesia
+  - temporal
+  - vanta
+  - weaviate
+  - zapier
+  greenhouse:
+  - adyen
+  - affirm
+  - airtable
+  - anthropic
+  - asana
+  - assemblyai
+  - canonical
+  - circleci
+  - clickhouse
+  - cloudflare
+  - cockroachlabs
+  - databricks
+  - datadog
+  - descript
+  - discord
+  - dropbox
+  - druva
+  - elastic
+  - fivetran
+  - galileo
+  - gitlab
+  - grafanalabs
+  - groww
+  - gusto
+  - inmobi
+  - instacart
+  - labelbox
+  - lyft
+  - mongodb
+  - netradyne
+  - observeai
+  - pathai
+  - phonepe
+  - pinterest
+  - planetscale
+  - postman
+  - reddit
+  - remote
+  - remotecom
+  - robinhood
+  - rubrik
+  - samsara
+  - scaleai
+  - slice
+  - snorkelai
+  - stripe
+  - togetherai
+  - turing
+  - twilio
+  - vercel
+  lever:
+  - cred
+  - meesho
+  - neon
+  - toptal
+  - zeta
 boards:
 - remotive
 - remoteok
