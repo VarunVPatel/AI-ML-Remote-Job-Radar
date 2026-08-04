@@ -38,7 +38,11 @@ Write the survivors to `work/screened.json`, sorted by score descending:
   "tailored":false}]
 ```
 
-## Task 2 — Tailor a resume for each job scoring >= `match_threshold`
+## Task 2 — Tailor resumes
+
+Tailor a resume for every job scoring >= `match_threshold`. If fewer than
+`always_tailor_top_n` jobs clear it, tailor the highest-scoring jobs until you
+reach that count, so the digest is never empty. Cap at `max_resumes_per_run`.
 
 Cap at `max_resumes_per_run`, highest scores first. For each, write
 `work/tailored/{id}.json`:

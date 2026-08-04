@@ -137,4 +137,5 @@ candidate_context:
 # ---- Thresholds ----
 match_threshold: 55      # lowered from 65 while the bullet bank is still thin
 max_jobs_per_run: 30
+always_tailor_top_n: 5
 max_resumes_per_run: 12
