@@ -1,77 +1,166 @@
-# YOUR BULLET BANK. Fill this in once, properly — the quality of every tailored
-# resume is capped by the quality of what's here.
-#
-# Rules that make this work:
-#  - Write MORE bullets than fit on one page (aim 25-40). The tailoring step
-#    SELECTS from these; it is forbidden from inventing new ones.
-#  - Every bullet must be TRUE and, where possible, quantified.
-#  - Tag generously. Tags are how relevant bullets get surfaced per JD.
+# Bullet bank. The tailoring step may only SELECT and REPHRASE from this file —
+# it cannot invent. Anything not written here will never appear on a resume.
 
 basics:
   name: Varun Patel
-  title: Machine Learning Engineer          # adjust to how you want to be read
-  email: you@example.com
-  phone: "+91 ..."
-  location: Bengaluru, India
-  linkedin: linkedin.com/in/...
-  github: github.com/...
+  title: AI/ML Engineer
+  email: varun19patel@gmail.com
+  phone: "+91 8849516375"
+  phone_alt: "+1 (313) 258-6602"
+  location: "Vadodara, India"        # <-- CHECK. Set to wherever you actually live.
+  linkedin: linkedin.com/in/varun-patel-vp191202
+  github: github.com/patvarun
   website: ""
 
 summary_seeds:
-  # 2-3 raw factual sentences. The tailoring step reweights these per JD;
-  # it may not add claims that aren't here.
-  - "Software engineer with N years building and shipping ML-backed systems in production."
-  - "Experience across the full lifecycle: data pipelines, model training, evaluation, deployment, monitoring."
-  - "Comfortable working async across time zones in distributed teams."
+  - "AI/ML engineer with an MS in Artificial Intelligence, fine-tuning and deploying
+     language models for domain-specific applications."
+  - "Hands-on across the applied ML lifecycle: dataset preparation, fine-tuning,
+     evaluation, and real-time endpoint deployment on Azure ML."
+  - "Experience spans computer vision, NLP, multimodal systems, and classical ML
+     for forecasting and segmentation."
+  - "Comfortable working async in distributed teams across time zones."
 
 experience:
   - company: Ascendion
-    role: "<your title>"
-    location: Bengaluru, India (Remote)
-    start: "YYYY-MM"
+    role: "Associate AI/ML Engineer"
+    location: "Vadodara, India"
+    start: "2026-06"
     end: present
     bullets:
-      - text: "Built <X> that <did Y>, reducing <metric> by <N>%."
-        tags: [python, backend, llm]
-      - text: "Designed and deployed <pipeline> processing <N> records/day using <stack>."
-        tags: [data-engineering, pipelines, aws]
-      - text: "Integrated Claude via AWS Bedrock into <workflow>, cutting <task> time from <A> to <B>."
-        tags: [llm, aws, bedrock, genai, integration]
-      - text: "<Add 6-10 more. Be specific. Numbers beat adjectives.>"
-        tags: []
+      - text: "Fine-tuned Phi-4 for domain-specific intent classification, merged the
+               trained adapters, and deployed the model as a real-time inference
+               endpoint on Azure Machine Learning."
+        tags: [fine-tuning, phi-4, lora, intent-classification, nlp, azure, deployment, slm]
+      - text: "Fine-tuned and deployed a Llama-3-based medical question-answering model,
+               validating response quality end-to-end against domain test cases before
+               release."
+        tags: [fine-tuning, llama, healthcare, question-answering, llm, evaluation]
+      - text: "Built, tested, and documented real-time inference endpoints on Azure ML,
+               covering model registration, environment configuration, and endpoint
+               validation."
+        tags: [azure, mlops, deployment, endpoints, inference, infrastructure]
+      - text: "Benchmarked CPU inference latency across both deployed models and specified
+               the GPU compute configuration required to bring response times under two
+               seconds."
+        tags: [benchmarking, latency, optimization, inference, gpu, performance]
+      - text: "Cut idle hosting cost by spinning down active compute while keeping
+               endpoints, models, and environments fully configured for on-demand
+               redeployment in roughly fifteen minutes."
+        tags: [cost-optimization, mlops, azure, infrastructure, cloud]
+      # ADD 2-4 MORE as you go. Data prep, prompt design, code review, anything
+      # you can talk through in an interview.
 
-  - company: "<previous employer>"
-    role: "<title>"
-    location: ""
-    start: "YYYY-MM"
-    end: "YYYY-MM"
+  - company: Indian Institute of Technology, Delhi
+    role: Research Intern
+    location: Delhi, India
+    start: "2022-09"
+    end: "2023-07"
     bullets:
-      - text: ""
-        tags: []
+      - text: "Developed a magnetic tomography-based device prototype for subterranean
+               pipe inspection using MATLAB, machine learning, and Arduino, under
+               Prof. Brejesh Lall."
+        tags: [research, matlab, signal-processing, machine-learning, hardware]
+      - text: "Built a real-time mobile magnetic field measurement application with
+               graphical visualization."
+        tags: [mobile, real-time, visualization, sensors]
+      - text: "Analyzed and processed research data to produce technical reports and
+               presentations for the research group."
+        tags: [data-analysis, research, communication]
 
 projects:
-  - name: "<project name>"
+  - name: "Image-Based Story Generation using Multimodal AI"
     link: ""
     bullets:
-      - text: "Built <thing> using <stack>; <outcome or scale>."
-        tags: [pytorch, nlp]
+      - text: "Built a multimodal AI system combining YOLOv11 object detection with
+               LLaMA2 to generate contextual stories from images, targeting assistive
+               technology and educational use."
+        tags: [multimodal, computer-vision, llm, yolo, llama, genai, pytorch]
+      - text: "Trained YOLOv11 on a custom 10-class COCO subset, lifting precision from
+               37% to 58%, recall from 26% to 45%, and mAP@50 from 23% to 40%."
+        tags: [computer-vision, yolo, object-detection, training, metrics]
+      - text: "Engineered structured prompts integrating detected object labels and
+               spatial context; evaluated with precision-recall curves and confusion
+               matrices."
+        tags: [prompt-engineering, evaluation, multimodal, llm]
+
+  - name: "E-Commerce Data Mining: Market Basket, Segmentation & Forecasting"
+    link: "github.com/patvarun/market-basket-analysis"
+    bullets:
+      - text: "Analyzed 500,000+ transactions across 40,000+ customers using Apriori and
+               FP-Growth for market basket analysis; FP-Growth delivered a 4x speedup."
+        tags: [data-mining, algorithms, python, pandas, scale]
+      - text: "Segmented customers on RFM features using K-Means and DBSCAN to surface
+               targeted marketing opportunities."
+        tags: [clustering, unsupervised, scikit-learn, segmentation]
+      - text: "Built an XGBoost sales forecasting model with engineered lag features and
+               rolling averages, achieving 40% lower RMSE than a SARIMA baseline."
+        tags: [forecasting, xgboost, time-series, feature-engineering, metrics]
+
+  - name: "Raise Up — Full-Stack Fundraising Platform"
+    link: "github.com/patvarun/CIS553-Raise-Up"
+    bullets:
+      - text: "Built a full-stack fundraising platform using React, Flask, and REST APIs
+               with Stripe PaymentIntent integration for one-off and recurring donations."
+        tags: [full-stack, react, flask, rest-api, backend, payments]
+      - text: "Implemented role-based authentication with password hashing, session
+               management, and real-time campaign progress tracking."
+        tags: [backend, auth, security, web]
+      - text: "Delivered via Agile with Jira backlog management and user stories;
+               debounced API calls to optimize search performance."
+        tags: [agile, jira, collaboration, optimization]
+
+  - name: "Institute Development and Content Team, Office of International Relations"
+    link: ""
+    bullets:
+      - text: "Led a 5-member team to build an internship portal and coordinate
+               international technical club collaborations."
+        tags: [leadership, teamwork, ownership]
+      - text: "Organized international scholarship webinars reaching 200+ students."
+        tags: [leadership, communication, events]
 
 education:
-  - institution: "<college>"
-    credential: "<degree>"
-    year: "YYYY"
-    note: ""
+  - institution: "University of Michigan – Dearborn"
+    credential: "M.S. Artificial Intelligence"
+    year: "2026"
+    note: "Dearborn, USA"
+  - institution: "National Institute of Technology, Tiruchirappalli"
+    credential: "B.Tech Instrumentation and Control Engineering"
+    year: "2024"
+    note: "NIT Trichy, India"
+  # Certifications ride here so they render without a schema change.
+  - institution: "Amazon Web Services"
+    credential: "AWS Certified AI Practitioner"
+    year: "2026"                     # <-- CHECK
+    note: "Certification"
 
 skills:
-  languages: [Python, SQL, JavaScript]
-  ml: [PyTorch, scikit-learn, Hugging Face Transformers, LangChain]
-  mlops: [Docker, MLflow, Airflow, CI/CD]
-  cloud: [AWS, S3, Lambda, Bedrock, SageMaker]
-  data: [Pandas, Spark, PostgreSQL]
+  languages: [Python, C/C++, SQL]
+  ml: [PyTorch, scikit-learn, XGBoost, YOLO, Transformers, LLaMA, Phi-4, Fine-tuning,
+       NLP, Computer Vision, Multimodal AI, Time-Series Forecasting, Clustering,
+       Classification]
+  genai: [LLM fine-tuning, LoRA / adapter merging, Small Language Models,
+          Prompt Engineering, Intent Classification, Model Evaluation]
+  cloud: [Azure Machine Learning, Azure ML Endpoints, Real-time Inference Deployment,
+          AWS, AWS Certified AI Practitioner]
+  data: [NumPy, pandas, Feature Engineering, Data Mining]
+  web: [React, Flask, REST APIs]
+  tools: [Git, Jira, MATLAB, Simulink, Agile/Scrum]
 
-# Things you will NOT claim, even if a JD asks for them. Guards against the
-# model stretching. Add anything you've only lightly touched.
+# Things you will NOT claim, even if a JD asks for them. This is what stops the
+# model stretching a JD keyword onto your resume. Add to it freely.
 never_claim:
-  - Kubernetes administration
-  - CUDA kernel development
-  - Formal research publications
+  - Client, project, or internal system names from employer work
+  - Spec-driven agent pipeline work
+  - GPU inference deployment (specified the config, did not ship it)
+  - ARM work (not started yet)
+  - Kubernetes
+  - Docker in production
+  - Terraform or infrastructure-as-code
+  - Spark or distributed data processing
+  - CUDA or GPU kernel development
+  - Distributed / multi-node model training
+  - Peer-reviewed publications
+  - SageMaker
+  - Kafka or streaming infrastructure
+  - Team management in an engineering role
